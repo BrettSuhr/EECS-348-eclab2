@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Style Changer</title>
+</head>
+<body>
+    <p id="dynamicParagraph" style="border: 2px solid black; padding: 20px;">
+        This is a paragraph.
+    </p>
+    
+    <label for="rgb">Enter RGB values (e.g., 255,0,0 for red):</label>
+    <input type="text" id="rgb" placeholder="255,0,0">
+    
+    <label for="borderWidth">Enter border width in pixels (e.g., 5):</label>
+    <input type="text" id="borderWidth" placeholder="2">
+
+    <button onclick="changeColorAndBorder()">Apply Styles</button>
+
+    <script>
+        function changeColorAndBorder() {
+            var rgbValue = document.getElementById("rgb").value;
+            var borderWidthValue = document.getElementById("borderWidth").value;
+            var paragraph = document.getElementById("dynamicParagraph");
+
+            paragraph.style.color = "rgb(" + rgbValue + ")";
+            paragraph.style.borderColor = "rgb(" + rgbValue + ")";
+            paragraph.style.borderWidth = borderWidthValue + "px";
+        }
+    </script>
+</body>
+</html>
+
